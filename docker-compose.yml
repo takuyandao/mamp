@@ -12,15 +12,12 @@ services:
   mysql:
     build: ./mysql
     ports:
-      - 3306:3306
+      - 3333:3306
     volumes:
       - db-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_USER: root
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: pwd
+      MYSQL_ROOT_PASSWORD: pwd
 
 volumes:
   db-data:
