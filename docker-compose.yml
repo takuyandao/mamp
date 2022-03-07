@@ -15,14 +15,12 @@ services:
       - 3306:3306
     volumes:
       - db-data:/var/lib/mysql
-    MYSQL_ROOT_USER: root
-    MYSQL_ROOT_PASSWORD: root
-      # Database名称の指定
-    MYSQL_DATABASE: test_db
-      # 作業用MySQLユーザー名称の指定
-    MYSQL_USER: user
-      # 作業用MySQLユーザーパスワードの指定
-    MYSQL_PASSWORD: pwd
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pwd
 
 volumes:
   db-data:
